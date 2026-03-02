@@ -1,0 +1,79 @@
+# Business — Generative Engine Optimization Map
+
+---
+
+## Pages
+
+### בית
+https://example.com
+גלו מבחר מצעים איכותיים ומגבות רכות שיהפכו את הבית שלכם למקלט של נוחות. סטים מושלמים לזוגות צעירים, תינוקות וכל המשפחה. איכות שמורגשת!
+
+### אודות
+https://example.com/about
+למה אלפי משפחות בוחרות בעטוף באהבה? כי אנחנו מאמינים שאיכות וחום ביתי מתחילים בטקסטיל נכון. הכירו את הערכים והמחויבות שלנו לנוחות שלכם.
+
+### אוספים
+https://example.com/collections
+סטים מעוצבים במיוחד: מצעים איכותיים לזוגות צעירים, מגבות רכות לתינוקות, וסטי מתנה מושלמים. כל אוסף נבחר בקפידה למען הנוחות המקסימלית שלכם.
+
+### צור קשר
+https://example.com/contact
+יש שאלות על המוצרים שלנו? רוצים ייעוץ אישי לבחירת סט מצעים או מגבות? צרו קשר עכשיו ונעזור לכם למצוא את הפתרון המושלם לבית שלכם!
+
+### Products
+https://example.com/products
+המוצרים שלנו - עטוף באהבה
+
+### Cart
+https://example.com/cart
+עגלת הקניות שלך
+
+### Checkout
+https://example.com/checkout
+תשלום
+
+### Login
+https://example.com/login
+התחברות לקוחות
+
+### Account
+https://example.com/account
+החשבון שלי
+
+### Order Success
+https://example.com/order-success
+תודה על ההזמנה
+
+### Product Detail
+https://example.com/product/:slug
+פרטי המוצר - עטוף באהבה
+
+### Category
+https://example.com/category/:slug
+מוצרים - עטוף באהבה
+
+## Legal & Policy
+
+### Privacy Policy
+https://example.com/privacy
+Information about how user data is collected, stored, and protected.
+
+### Terms & Conditions
+https://example.com/terms
+Legal terms describing service usage, rights, and policies.
+
+### Accessibility Statement
+https://example.com/accessibility
+Information about WCAG compliance and accessibility features.
+
+---
+
+# Business Context (for LLM understanding)
+
+## About Business
+---
+
+# Additional Resources
+
+- **Sitemap**: https://example.com/sitemap.xml
+- **Robots.txt**: https://example.com/robots.txt
