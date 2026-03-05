@@ -506,6 +506,8 @@ window.onload = function() {
 /* === NAVBAR SCROLL JS OVERRIDE END === */
 
 ;
+
+;
 /* ==ZAPPY E-COMMERCE JS START== */
 // E-commerce functionality
 (function() {
@@ -1545,7 +1547,12 @@ function stripHtmlToText(html) {
             var label = attrLabels[key.toLowerCase()] || key;
             var isColor = key.toLowerCase() === 'color';
             if (isColor) {
-              var bgColor = /^#[0-9A-Fa-f]{3,6}$/.test(value) ? value : value.toLowerCase();
+              var bgColor = value;
+              if (!/^#[0-9A-Fa-f]{3,6}$/.test(value)) {
+                var lc = value.toLowerCase();
+                var _clr = {'dark grey':'#555','dark gray':'#555','light grey':'#d3d3d3','light gray':'#d3d3d3','light blue':'lightblue','dark blue':'darkblue','light green':'lightgreen','dark green':'darkgreen','dark red':'darkred','light pink':'lightpink','dark orange':'darkorange','sky blue':'skyblue','royal blue':'royalblue','navy blue':'navy','forest green':'forestgreen','olive green':'olivedrab','hot pink':'hotpink','deep pink':'deeppink','dark violet':'darkviolet','slate grey':'slategrey','slate gray':'slategray','dim grey':'dimgrey','dim gray':'dimgray','off white':'#f5f5f0','burgundy':'#800020','charcoal':'#36454f','champagne':'#f7e7ce','sand':'#c2b280','taupe':'#483c32','wine':'#722f37','rust':'#b7410e','sage':'#bcb88a','mint':'#98ff98','peach':'#ffcba4','cream':'#fffdd0','mauve':'#e0b0ff'};
+                bgColor = _clr[lc] || lc;
+              }
               parts.push('<span class="cart-item-attr"><span class="cart-item-attr-label">' + label + ':</span> <span class="cart-item-color-swatch" title="' + value + '" style="display:inline-block;width:14px;height:14px;border-radius:50%;background-color:' + bgColor + ';border:1px solid rgba(0,0,0,0.15);vertical-align:middle;margin-' + (document.documentElement.dir === 'rtl' ? 'right' : 'left') + ':4px;"></span></span>');
             } else {
               parts.push('<span class="cart-item-attr"><span class="cart-item-attr-label">' + label + ':</span> ' + value + '</span>');
@@ -6023,13 +6030,11 @@ function renderProductDetail(container, product, t) {
         const optionsHtml = valuesArray.map(value => {
           // For color attribute, try to use color as background
           if (isColorAttr) {
-            // Use CSS color names directly - they work for common colors like red, blue, green, etc.
-            // For hex values or custom colors, pass through directly
             var bgColor = value;
-            // Check if it looks like a hex color
             if (!/^#[0-9A-Fa-f]{3,6}$/.test(value)) {
-              // Not a hex, use as CSS color name (works for red, blue, green, black, white, etc.)
-              bgColor = value.toLowerCase();
+              var lc = value.toLowerCase();
+              var _clr = {'dark grey':'#555','dark gray':'#555','light grey':'#d3d3d3','light gray':'#d3d3d3','light blue':'lightblue','dark blue':'darkblue','light green':'lightgreen','dark green':'darkgreen','dark red':'darkred','light pink':'lightpink','dark orange':'darkorange','sky blue':'skyblue','royal blue':'royalblue','navy blue':'navy','forest green':'forestgreen','olive green':'olivedrab','sea green':'seagreen','hot pink':'hotpink','deep pink':'deeppink','dark violet':'darkviolet','slate grey':'slategrey','slate gray':'slategray','dim grey':'dimgrey','dim gray':'dimgray','steel blue':'steelblue','pale green':'palegreen','off white':'#f5f5f0','burgundy':'#800020','charcoal':'#36454f','champagne':'#f7e7ce','sand':'#c2b280','taupe':'#483c32','wine':'#722f37','rust':'#b7410e','sage':'#bcb88a','mint':'#98ff98','peach':'#ffcba4','cream':'#fffdd0','mauve':'#e0b0ff'};
+              bgColor = _clr[lc] || lc;
             }
             return '<button type="button" class="variant-option color-swatch" data-attr="' + attrKey + '" data-value="' + value + '" style="background-color: ' + bgColor + ';" title="' + value + '"></button>';
           }
@@ -7734,7 +7739,12 @@ async function loadRelatedProducts(currentProduct, t) {
       var fullText = span.textContent || '';
       var colorValue = fullText.replace(labelEl.textContent || '', '').trim();
       if (!colorValue) return;
-      var bgColor = /^#[0-9A-Fa-f]{3,6}$/.test(colorValue) ? colorValue : colorValue.toLowerCase();
+      var bgColor = colorValue;
+      if (!/^#[0-9A-Fa-f]{3,6}$/.test(colorValue)) {
+        var lc = colorValue.toLowerCase();
+        var _clr = {'dark grey':'#555','dark gray':'#555','light grey':'#d3d3d3','light gray':'#d3d3d3','light blue':'lightblue','dark blue':'darkblue','light green':'lightgreen','dark green':'darkgreen','dark red':'darkred','light pink':'lightpink','dark orange':'darkorange','sky blue':'skyblue','royal blue':'royalblue','navy blue':'navy','forest green':'forestgreen','olive green':'olivedrab','hot pink':'hotpink','deep pink':'deeppink','dark violet':'darkviolet','slate grey':'slategrey','slate gray':'slategray','dim grey':'dimgrey','dim gray':'dimgray','off white':'#f5f5f0','burgundy':'#800020','charcoal':'#36454f','champagne':'#f7e7ce','sand':'#c2b280','taupe':'#483c32','wine':'#722f37','rust':'#b7410e','sage':'#bcb88a','mint':'#98ff98','peach':'#ffcba4','cream':'#fffdd0','mauve':'#e0b0ff'};
+        bgColor = _clr[lc] || lc;
+      }
       var swatch = document.createElement('span');
       swatch.className = 'cart-item-color-swatch';
       swatch.title = colorValue;
