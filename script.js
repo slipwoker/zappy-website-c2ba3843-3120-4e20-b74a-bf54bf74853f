@@ -500,6 +500,12 @@ window.onload = function() {
 ;
 
 ;
+
+/* === NAVBAR SCROLL JS OVERRIDE START === */
+(function(){if(window._zappyNavScrollCleanup){window._zappyNavScrollCleanup();delete window._zappyNavScrollCleanup;}var nb=document.querySelector('nav.navbar,.navbar:not(.zappy-catalog-menu)');var cm=document.querySelector('.zappy-catalog-menu,#zappy-catalog-menu');function clr(){if(nb){nb.style.removeProperty('background');nb.style.removeProperty('background-color');nb.style.removeProperty('backdrop-filter');nb.style.removeProperty('-webkit-backdrop-filter');nb.style.removeProperty('box-shadow');nb.style.removeProperty('--frosted-text');nb.classList.remove('scrolled');}if(cm){cm.style.removeProperty('background');cm.style.removeProperty('background-color');cm.style.removeProperty('backdrop-filter');cm.style.removeProperty('-webkit-backdrop-filter');cm.classList.remove('scrolled');}}clr();window.addEventListener('scroll',clr,{passive:true});window._zappyNavScrollCleanup=function(){window.removeEventListener('scroll',clr);};})();
+/* === NAVBAR SCROLL JS OVERRIDE END === */
+
+;
 /* ==ZAPPY E-COMMERCE JS START== */
 // E-commerce functionality
 (function() {
@@ -1744,6 +1750,7 @@ function stripHtmlToText(html) {
         selectedShipping = shippingMethods[0];
         positionAddressSection(shippingMethods[0]);
         updateOrderTotals();
+        updatePlaceOrderState();
       }
     } catch (e) {
       console.error('Failed to load shipping methods', e);
@@ -1798,6 +1805,7 @@ function stripHtmlToText(html) {
       // Auto-select first option
       if (paymentMethods.length > 0) {
         selectedPaymentMethod = paymentMethods[0];
+        updatePlaceOrderState();
       }
     } catch (e) {
       console.error('Failed to load payment methods', e);
@@ -1811,6 +1819,7 @@ function stripHtmlToText(html) {
     document.querySelectorAll('.payment-option').forEach(el => {
       el.classList.toggle('selected', el.dataset.methodId === methodId);
     });
+    updatePlaceOrderState();
   };
   
   // Inline validation helper functions
@@ -1860,26 +1869,39 @@ function stripHtmlToText(html) {
     const placeOrderBtn = document.getElementById('place-order-btn');
     if (!placeOrderBtn) return;
     
-    // Add real-time validation - clear errors when user types
+    // Add real-time validation - clear errors when user types and update Place Order state
     var fieldsToWatch = ['customer-name', 'customer-email', 'customer-phone', 'shipping-street', 'shipping-city'];
     fieldsToWatch.forEach(function(fieldId) {
       var field = document.getElementById(fieldId);
       if (field) {
         field.addEventListener('input', function() {
           clearFieldError(fieldId, fieldId + '-error');
+          updatePlaceOrderState();
         });
       }
     });
     
-    // Clear terms error when checkbox changes
+    // shipping-state is a <select>, so use 'change' instead of 'input'
+    var stateSelect = document.getElementById('shipping-state');
+    if (stateSelect) {
+      stateSelect.addEventListener('change', function() {
+        clearFieldError('shipping-state', 'shipping-state-error');
+        updatePlaceOrderState();
+      });
+    }
+    
+    // Clear terms error when checkbox changes and update Place Order state
     var termsCheckbox = document.getElementById('terms-checkbox');
     if (termsCheckbox) {
       termsCheckbox.addEventListener('change', function() {
         var wrapper = document.querySelector('.terms-checkbox-wrapper');
         if (wrapper) wrapper.classList.remove('has-error');
         clearFieldError('', 'terms-checkbox-error');
+        updatePlaceOrderState();
       });
     }
+    
+    updatePlaceOrderState();
     
     placeOrderBtn.addEventListener('click', async function(e) {
       e.preventDefault();
@@ -2289,6 +2311,7 @@ function stripHtmlToText(html) {
             zipInput.value = defaultAddress.zip;
           }
         }
+        updatePlaceOrderState();
       })
       .catch(function() {
         localStorage.removeItem(tokenKey);
@@ -2442,8 +2465,30 @@ function stripHtmlToText(html) {
   function updatePlaceOrderState() {
     var btn = document.getElementById('place-order-btn');
     if (!btn) return;
-    var allDone = checkoutStepsCompleted.contact && checkoutStepsCompleted.shipping && checkoutStepsCompleted.payment;
-    btn.disabled = !allDone;
+
+    var nameVal = (document.getElementById('customer-name') || {}).value || '';
+    var emailVal = (document.getElementById('customer-email') || {}).value || '';
+    var phoneVal = (document.getElementById('customer-phone') || {}).value || '';
+    var contactOk = nameVal.trim() && emailVal.trim() && isValidEmail(emailVal.trim()) && phoneVal.trim();
+
+    var shippingOk = !!selectedShipping;
+    if (selectedShipping && !selectedShipping.is_pickup) {
+      var streetVal = (document.getElementById('shipping-street') || {}).value || '';
+      var cityVal = (document.getElementById('shipping-city') || {}).value || '';
+      shippingOk = shippingOk && !!streetVal.trim() && !!cityVal.trim();
+      var stateWrapper = document.getElementById('state-wrapper');
+      var stateVal = (document.getElementById('shipping-state') || {}).value || '';
+      if (stateWrapper && stateWrapper.style.display !== 'none') {
+        shippingOk = shippingOk && !!stateVal.trim();
+      }
+    }
+
+    var paymentOk = isPaymentConfigured && !!selectedPaymentMethod;
+
+    var termsBox = document.getElementById('terms-checkbox');
+    var termsOk = termsBox && termsBox.checked;
+
+    btn.disabled = !(contactOk && shippingOk && paymentOk && termsOk);
   }
 
   function updateCheckoutItemsCount() {
@@ -2719,6 +2764,7 @@ function stripHtmlToText(html) {
     }
     positionAddressSection(selectedShipping);
     updateOrderTotals();
+    updatePlaceOrderState();
   };
   
   window.zappyAddToCart = addToCart;
@@ -5255,17 +5301,42 @@ function initTransparentNavbarScrollEffect() {
 
   // On pages without a dark hero, the transparent navbar shows light text on
   // a light background — invisible. Detect this and lock the frosted state.
-  var heroEl = document.querySelector('section[class*="hero"], [data-hero-type]');
+  function srgbLuminance(rv, gv, bv) {
+    rv /= 255; gv /= 255; bv /= 255;
+    rv = rv <= 0.03928 ? rv / 12.92 : Math.pow((rv + 0.055) / 1.055, 2.4);
+    gv = gv <= 0.03928 ? gv / 12.92 : Math.pow((gv + 0.055) / 1.055, 2.4);
+    bv = bv <= 0.03928 ? bv / 12.92 : Math.pow((bv + 0.055) / 1.055, 2.4);
+    return 0.2126 * rv + 0.7152 * gv + 0.0722 * bv;
+  }
+  var heroEl = document.querySelector('section[class*="hero"], [data-hero-type], main > section:first-child');
   var pageHasDarkHero = false;
   if (heroEl) {
     var hCs = getComputedStyle(heroEl);
-    if (hCs.backgroundImage !== 'none' || heroEl.querySelector('[class*="scrim"], [class*="overlay"]')) {
-      pageHasDarkHero = true;
+    var heroBgImg = hCs.backgroundImage;
+    if (heroBgImg && heroBgImg !== 'none') {
+      if (heroBgImg.indexOf('url(') !== -1) {
+        // Photo background — assume dark (typically has dark overlay)
+        pageHasDarkHero = true;
+      } else if (heroBgImg.indexOf('gradient') !== -1) {
+        // CSS gradient — parse RGB stops and calculate average luminance
+        var colorMatches = heroBgImg.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/g);
+        if (colorMatches && colorMatches.length > 0) {
+          var totalLum = 0;
+          for (var ci = 0; ci < colorMatches.length; ci++) {
+            var parts = colorMatches[ci].match(/\d+/g);
+            totalLum += srgbLuminance(parseInt(parts[0]), parseInt(parts[1]), parseInt(parts[2]));
+          }
+          pageHasDarkHero = (totalLum / colorMatches.length) < 0.4;
+        } else {
+          pageHasDarkHero = true;
+        }
+      } else {
+        pageHasDarkHero = true;
+      }
     } else {
       var hBgM = hCs.backgroundColor.match(/\d+/g);
-      if (hBgM) {
-        var hLum = 0.2126 * parseInt(hBgM[0]) / 255 + 0.7152 * parseInt(hBgM[1]) / 255 + 0.0722 * parseInt(hBgM[2]) / 255;
-        if (hLum < 0.4) pageHasDarkHero = true;
+      if (hBgM && hBgM.length >= 3) {
+        pageHasDarkHero = srgbLuminance(parseInt(hBgM[0]), parseInt(hBgM[1]), parseInt(hBgM[2])) < 0.4;
       }
     }
   }
@@ -6861,9 +6932,6 @@ async function loadRelatedProducts(currentProduct, t) {
   }
 }
 /* ==ZAPPY E-COMMERCE JS END== */
-/* === NAVBAR SCROLL JS OVERRIDE START === */
-(function(){if(window._zappyNavScrollCleanup){window._zappyNavScrollCleanup();delete window._zappyNavScrollCleanup;}var nb=document.querySelector('nav.navbar,.navbar:not(.zappy-catalog-menu)');var cm=document.querySelector('.zappy-catalog-menu,#zappy-catalog-menu');function clr(){if(nb){nb.style.removeProperty('background');nb.style.removeProperty('background-color');nb.style.removeProperty('backdrop-filter');nb.style.removeProperty('-webkit-backdrop-filter');nb.style.removeProperty('box-shadow');nb.style.removeProperty('--frosted-text');nb.classList.remove('scrolled');}if(cm){cm.style.removeProperty('background');cm.style.removeProperty('background-color');cm.style.removeProperty('backdrop-filter');cm.style.removeProperty('-webkit-backdrop-filter');cm.classList.remove('scrolled');}}clr();window.addEventListener('scroll',clr,{passive:true});window._zappyNavScrollCleanup=function(){window.removeEventListener('scroll',clr);};})();
-/* === NAVBAR SCROLL JS OVERRIDE END === */
 
 
 /* ZAPPY_PUBLISHED_LIGHTBOX_RUNTIME */
