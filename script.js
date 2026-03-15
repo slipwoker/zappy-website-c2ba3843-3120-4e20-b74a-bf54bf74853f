@@ -510,6 +510,8 @@ window.onload = function() {
 ;
 
 ;
+
+;
 /* ==ZAPPY E-COMMERCE JS START== */
 // E-commerce functionality
 (function() {
@@ -6024,12 +6026,14 @@ function renderProductDetail(container, product, t) {
         const label = attrLabels[attrKey.toLowerCase()] || attrKey.charAt(0).toUpperCase() + attrKey.slice(1);
         const sizeOrder = {'xxxs':0,'xxs':1,'xs':2,'s':3,'m':4,'l':5,'xl':6,'xxl':7,'2xl':7,'xxxl':8,'3xl':8,'4xl':9,'5xl':10};
         const valuesArray = Array.from(values).sort((a, b) => {
-          const numA = parseFloat(a), numB = parseFloat(b);
-          if (!isNaN(numA) && !isNaN(numB)) return numA - numB;
           const sa = sizeOrder[String(a).toLowerCase()], sb = sizeOrder[String(b).toLowerCase()];
+          const numA = sa === undefined ? parseFloat(a) : NaN;
+          const numB = sb === undefined ? parseFloat(b) : NaN;
+          if (!isNaN(numA) && !isNaN(numB)) return numA - numB;
           if (sa !== undefined && sb !== undefined) return sa - sb;
-          if (sa !== undefined) return -1;
-          if (sb !== undefined) return 1;
+          const ca = !isNaN(numA) ? 0 : sa !== undefined ? 1 : 2;
+          const cb = !isNaN(numB) ? 0 : sb !== undefined ? 1 : 2;
+          if (ca !== cb) return ca - cb;
           return String(a).localeCompare(String(b));
         });
         const isColorAttr = attrKey.toLowerCase() === 'color';
@@ -7212,6 +7216,23 @@ async function loadRelatedProducts(currentProduct, t) {
       img.style.setProperty('margin', '0', 'important');
     }
 
+    function fixOrphanedZoomImages() {
+      if (window.innerWidth > 768) return;
+      var zoomImgs = document.querySelectorAll('img[data-zappy-zoom]');
+      for (var j = 0; j < zoomImgs.length; j++) {
+        var img = zoomImgs[j];
+        if (img.closest && img.closest('[data-zappy-zoom-wrapper="true"]')) continue;
+        img.style.setProperty('position', 'relative', 'important');
+        img.style.setProperty('width', '100%', 'important');
+        img.style.setProperty('height', 'auto', 'important');
+        img.style.setProperty('max-width', '100%', 'important');
+        img.style.setProperty('max-height', '300px', 'important');
+        img.style.setProperty('object-fit', 'cover', 'important');
+        img.style.removeProperty('left');
+        img.style.removeProperty('top');
+      }
+    }
+
     function initZoomWrappers() {
       var wrappers = document.querySelectorAll('[data-zappy-zoom-wrapper="true"]');
       for (var i = 0; i < wrappers.length; i++) {
@@ -7229,6 +7250,7 @@ async function loadRelatedProducts(currentProduct, t) {
           }
         })(wrappers[i]);
       }
+      fixOrphanedZoomImages();
     }
 
     if (document.readyState === 'loading') {
@@ -7325,10 +7347,27 @@ async function loadRelatedProducts(currentProduct, t) {
       phoneBtn.__zappyPhoneBound = true;
 
       phoneBtn.addEventListener('click', function() {
-        var telLinks = document.querySelectorAll('a[href^="tel:"]');
-        var phoneNumber = telLinks.length > 0
-          ? telLinks[0].getAttribute('href').replace('tel:', '')
-          : null;
+        var phoneNumber = phoneBtn.getAttribute('data-phone') || null;
+
+        if (!phoneNumber) {
+          var telLinks = document.querySelectorAll('a[href^="tel:"]');
+          if (telLinks.length > 0) {
+            phoneNumber = telLinks[0].getAttribute('href').replace('tel:', '');
+          }
+        }
+
+        if (!phoneNumber) {
+          var allLinks = document.querySelectorAll('a[href]');
+          for (var i = 0; i < allLinks.length; i++) {
+            var h = allLinks[i].getAttribute('href') || '';
+            var cleaned = h.replace(/[-\s()]/g, '');
+            if (/^(\+?\d{9,15}|0\d{8,9})$/.test(cleaned)) {
+              phoneNumber = cleaned;
+              break;
+            }
+          }
+        }
+
         if (phoneNumber && phoneNumber.indexOf('[') === -1) {
           window.location.href = 'tel:' + phoneNumber;
         }
@@ -7401,16 +7440,32 @@ async function loadRelatedProducts(currentProduct, t) {
 /* ZAPPY_CONTACT_FORM_PREVENT_DEFAULT */
 (function(){
   try {
+    var _kw=['contact','booking','inquiry','enquiry','register','signup','sign-up','order','request','apply'];
     function isContactForm(form) {
       var cls=(form.className||'').toLowerCase();
       var id=(form.id||'').toLowerCase();
       var act=(form.getAttribute('action')||'').toLowerCase();
-      if(cls.indexOf('contact')!==-1||id.indexOf('contact')!==-1||act.indexOf('contact')!==-1) return true;
+      if(_kw.some(function(k){return cls.indexOf(k)!==-1||id.indexOf(k)!==-1||act.indexOf(k)!==-1;})) return true;
       var sec=form.closest&&form.closest('section');
       if(sec){
         var sc=(sec.className||'').toLowerCase();
         var si=(sec.id||'').toLowerCase();
-        if(sc.indexOf('contact')!==-1||si.indexOf('contact')!==-1) return true;
+        if(_kw.some(function(k){return sc.indexOf(k)!==-1||si.indexOf(k)!==-1;})) return true;
+        if(sc.indexOf('form-section')!==-1||sc.indexOf('form_section')!==-1) return true;
+      }
+      if(window.zappyContactFormLoaded){
+        var inputs=form.querySelectorAll('input,textarea,select');
+        var hasEmail=false,hasPassword=false,visibleCount=0;
+        for(var i=0;i<inputs.length;i++){
+          var inp=inputs[i];
+          var t=(inp.type||'').toLowerCase();
+          var n=(inp.name||'').toLowerCase();
+          if(t==='hidden'||t==='submit'||t==='button'||t==='reset') continue;
+          visibleCount++;
+          if(t==='email'||n.indexOf('email')!==-1||n.indexOf('mail')!==-1) hasEmail=true;
+          if(t==='password') hasPassword=true;
+        }
+        if(hasEmail&&visibleCount>=2&&!hasPassword) return true;
       }
       return false;
     }
@@ -7446,6 +7501,13 @@ async function loadRelatedProducts(currentProduct, t) {
       }
     }
 
+    var _coreNameFields=['name','firstName','first_name','fname','lastName','last_name','lname'];
+    var _coreEmailFields=['email','emailAddress','mail','e-mail'];
+    var _corePhoneFields=['phone','tel','telephone','mobile','cellphone'];
+    var _coreMsgFields=['message','msg','comments','comment','description','details','notes','body','text','inquiry'];
+    var _coreSubjectFields=['subject','topic','regarding','re'];
+    var _allCoreFields=[].concat(_coreNameFields,_coreEmailFields,_corePhoneFields,_coreMsgFields,_coreSubjectFields);
+
     document.addEventListener('submit', function(e) {
       var form = e.target;
       if (!form || form.tagName !== 'FORM' || !isContactForm(form)) return;
@@ -7471,7 +7533,29 @@ async function loadRelatedProducts(currentProduct, t) {
 
       var fd = new FormData(form);
       var data = {};
-      fd.forEach(function(v,k){ data[k]=v; });
+      for(var pair of fd.entries()){
+        if(data[pair[0]]!==undefined){
+          if(Array.isArray(data[pair[0]])) data[pair[0]].push(pair[1]);
+          else data[pair[0]]=[data[pair[0]],pair[1]];
+        } else data[pair[0]]=pair[1];
+      }
+
+      var resolvedName=(data.name||'').trim()
+        ||[data.firstName||data.first_name||data.fname||'',data.lastName||data.last_name||data.lname||''].filter(Boolean).join(' ').trim()
+        ||(data.email||data.emailAddress||data.mail||'').trim()
+        ||'Anonymous';
+      var resolvedEmail=(data.email||data.emailAddress||data.mail||data['e-mail']||'').trim();
+      var resolvedPhone=data.phone||data.tel||data.telephone||data.mobile||data.cellphone||null;
+      var resolvedSubject=data.subject||data.topic||data.regarding||data.re||'Contact Form Submission';
+      var resolvedMsg=(data.message||data.msg||data.comments||data.comment||data.description||data.details||data.notes||data.body||data.text||data.inquiry||'').trim();
+      if(!resolvedMsg){
+        var _extra=Object.entries(data).filter(function(e){return _allCoreFields.indexOf(e[0])===-1;});
+        if(_extra.length>0) resolvedMsg=_extra.map(function(e){var l=e[0].replace(/([A-Z])/g,' $1').replace(/[_-]/g,' ').trim();var v=Array.isArray(e[1])?e[1].join(', '):e[1];return l+': '+v;}).join('\n');
+        else resolvedMsg='Form submission from '+window.location.pathname;
+      }
+
+      var extraFields={};
+      Object.keys(data).forEach(function(k){if(_allCoreFields.indexOf(k)===-1&&data[k]!==''&&data[k]!=null) extraFields[k]=data[k];});
 
       var currentPath = window.location.pathname;
       try { var pg=new URLSearchParams(window.location.search).get('page'); if(pg) currentPath=pg; } catch(x){}
@@ -7481,18 +7565,21 @@ async function loadRelatedProducts(currentProduct, t) {
       var apiBase = (window.ZAPPY_API_BASE || 'https://qaapi.zappy5.com').replace(/\/$/,'');
       apiBase = apiBase + '/api/email/contact-form';
 
+      var payload={
+        websiteId: wid,
+        name: resolvedName,
+        email: resolvedEmail,
+        subject: resolvedSubject,
+        message: resolvedMsg,
+        phone: resolvedPhone,
+        currentPagePath: currentPath
+      };
+      if(Object.keys(extraFields).length>0) payload.extraFields=extraFields;
+
       fetch(apiBase, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          websiteId: wid,
-          name: data.name || '',
-          email: data.email || '',
-          subject: data.subject || 'Contact Form Submission',
-          message: data.message || '',
-          phone: data.phone || null,
-          currentPagePath: currentPath
-        })
+        body: JSON.stringify(payload)
       }).then(function(r){ return r.json(); }).then(function(result){
         if (result.success) {
           if (result.thankYouPagePath && result.ticketNumber) {
@@ -7705,7 +7792,7 @@ async function loadRelatedProducts(currentProduct, t) {
       var old=document.getElementById('zappy-variant-state-css');if(old)old.remove();
       document.querySelectorAll('.variant-option').forEach(function(b){b.style.display='';b.disabled=false});
       var _so={'xxxs':0,'xxs':1,'xs':2,'s':3,'m':4,'l':5,'xl':6,'xxl':7,'2xl':7,'xxxl':8,'3xl':8,'4xl':9,'5xl':10};
-      document.querySelectorAll('.variant-options').forEach(function(c){var b=Array.from(c.querySelectorAll('.variant-option'));if(b.length<2)return;b.sort(function(a,b){var va=a.getAttribute('data-value')||'',vb=b.getAttribute('data-value')||'';var na=parseFloat(va),nb=parseFloat(vb);if(!isNaN(na)&&!isNaN(nb))return na-nb;var sa=_so[va.toLowerCase()],sb=_so[vb.toLowerCase()];if(sa!==undefined&&sb!==undefined)return sa-sb;if(sa!==undefined)return -1;if(sb!==undefined)return 1;return va.localeCompare(vb)});b.forEach(function(x){c.appendChild(x)})});
+      document.querySelectorAll('.variant-options').forEach(function(c){var b=Array.from(c.querySelectorAll('.variant-option'));if(b.length<2)return;b.sort(function(a,b){var va=a.getAttribute('data-value')||'',vb=b.getAttribute('data-value')||'';var sa=_so[va.toLowerCase()],sb=_so[vb.toLowerCase()];var na=sa===undefined?parseFloat(va):NaN,nb=sb===undefined?parseFloat(vb):NaN;if(!isNaN(na)&&!isNaN(nb))return na-nb;if(sa!==undefined&&sb!==undefined)return sa-sb;var ca=!isNaN(na)?0:sa!==undefined?1:2,cb=!isNaN(nb)?0:sb!==undefined?1:2;if(ca!==cb)return ca-cb;return va.localeCompare(vb)});b.forEach(function(x){c.appendChild(x)})});
       var origATC=window.addProductToCart;
       window.addProductToCart=function(){
         var keys=_gak();for(var i=0;i<keys.length;i++){if(!selectedAttributes.hasOwnProperty(keys[i])){
