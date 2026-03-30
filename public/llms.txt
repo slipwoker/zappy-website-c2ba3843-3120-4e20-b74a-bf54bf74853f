@@ -1,6 +1,4 @@
-# עטוף באהבה — Generative Engine Optimization Map
-
-> יש לי חנות למצעים ומגבות ואני צריך אתר עבורה
+# Business — Generative Engine Optimization Map
 
 ---
 
@@ -72,17 +70,7 @@ Information about WCAG compliance and accessibility features.
 
 # Business Context (for LLM understanding)
 
-## About עטוף באהבה
-יש לי חנות למצעים ומגבות ואני צריך אתר עבורה
-
-## Target Audience
-- זוגות טריים
-- חובבי עיצוב הבית
-- אמהות לילדים קטנים
-
-## Industry
-קמעונאות טקסטיל
-
+## About Business
 ---
 
 # Additional Resources
