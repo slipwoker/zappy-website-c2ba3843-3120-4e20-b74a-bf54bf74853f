@@ -1,79 +1,91 @@
-# Business — Generative Engine Optimization Map
+# עטוף באהבה — Generative Engine Optimization Map
+
+> יש לי חנות למצעים ומגבות ואני צריך אתר עבורה
 
 ---
 
 ## Pages
 
 ### בית
-https://atufbeahava.zappy5.app
+https://a-ufbeahava-wait-let-me-redo-t.zappy5.app
 גלו מבחר מצעים איכותיים ומגבות רכות שיהפכו את הבית שלכם למקלט של נוחות. סטים מושלמים לזוגות צעירים, תינוקות וכל המשפחה. איכות שמורגשת!
 
 ### אודות
-https://atufbeahava.zappy5.app/about
+https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/about
 למה אלפי משפחות בוחרות בעטוף באהבה? כי אנחנו מאמינים שאיכות וחום ביתי מתחילים בטקסטיל נכון. הכירו את הערכים והמחויבות שלנו לנוחות שלכם.
 
 ### אוספים
-https://atufbeahava.zappy5.app/collections
+https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/collections
 סטים מעוצבים במיוחד: מצעים איכותיים לזוגות צעירים, מגבות רכות לתינוקות, וסטי מתנה מושלמים. כל אוסף נבחר בקפידה למען הנוחות המקסימלית שלכם.
 
 ### צור קשר
-https://atufbeahava.zappy5.app/contact
+https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/contact
 יש שאלות על המוצרים שלנו? רוצים ייעוץ אישי לבחירת סט מצעים או מגבות? צרו קשר עכשיו ונעזור לכם למצוא את הפתרון המושלם לבית שלכם!
 
 ### Products
-https://atufbeahava.zappy5.app/products
+https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/products
 המוצרים שלנו - עטוף באהבה
 
 ### Cart
-https://atufbeahava.zappy5.app/cart
+https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/cart
 עגלת הקניות שלך
 
 ### Checkout
-https://atufbeahava.zappy5.app/checkout
+https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/checkout
 תשלום
 
 ### Login
-https://atufbeahava.zappy5.app/login
+https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/login
 התחברות לקוחות
 
 ### Account
-https://atufbeahava.zappy5.app/account
+https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/account
 החשבון שלי
 
 ### Order Success
-https://atufbeahava.zappy5.app/order-success
+https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/order-success
 תודה על ההזמנה
 
 ### Product Detail
-https://atufbeahava.zappy5.app/product/:slug
+https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/product/:slug
 פרטי המוצר - עטוף באהבה
 
 ### Category
-https://atufbeahava.zappy5.app/category/:slug
+https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/category/:slug
 מוצרים - עטוף באהבה
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://atufbeahava.zappy5.app/privacy
+https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://atufbeahava.zappy5.app/terms
+https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://atufbeahava.zappy5.app/accessibility
+https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
 
 # Business Context (for LLM understanding)
 
-## About Business
+## About עטוף באהבה
+יש לי חנות למצעים ומגבות ואני צריך אתר עבורה
+
+## Target Audience
+- זוגות טריים
+- חובבי עיצוב הבית
+- אמהות לילדים קטנים
+
+## Industry
+קמעונאות טקסטיל
+
 ---
 
 # Additional Resources
 
-- **Sitemap**: https://atufbeahava.zappy5.app/sitemap.xml
-- **Robots.txt**: https://atufbeahava.zappy5.app/robots.txt
+- **Sitemap**: https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/sitemap.xml
+- **Robots.txt**: https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/robots.txt
