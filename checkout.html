@@ -229,6 +229,8 @@
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
@@ -242,8 +244,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
     <!-- Mickidum Accessibility Toolbar -->
     <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/styles.css">
 
     <style id="zappy-dropdown-submenu-styles">
@@ -305,7 +305,7 @@
     // Preview pages are served by the Zappy server itself (localhost in dev), so use that base.
     // Deployed sites are static and must call the public Zappy API (never localhost).
     window.ZAPPY_API_BASE = (window.location.pathname.includes('/preview'))
-      ? "https://qaapi.zappy5.com"
+      ? "http://localhost:5001"
       : "https://qaapi.zappy5.com";
   </script>
   
@@ -408,18 +408,18 @@
                   </div>
                   <div class="checkout-form-fields">
                     <div class="input-wrapper">
-                      <label for="customer-name" class="checkout-field-label">שם מלא *</label>
+                      <label for="customer-name" class="checkout-field-label">שם מלא</label>
                       <input type="text" placeholder="שם מלא" id="customer-name" required>
                       <span class="field-error" id="customer-name-error"></span>
                     </div>
                     <div class="input-wrapper">
-                      <label for="customer-phone" class="checkout-field-label">מספר טלפון *</label>
+                      <label for="customer-phone" class="checkout-field-label">טלפון</label>
                       <input type="tel" placeholder="טלפון" id="customer-phone" required>
                       <span class="field-error" id="customer-phone-error"></span>
                     </div>
                     <div class="input-wrapper">
-                      <label for="customer-email" class="checkout-field-label">אימייל *</label>
-                      <input type="email" placeholder="you@company.com" id="customer-email" required>
+                      <label for="customer-email" class="checkout-field-label">אימייל</label>
+                      <input type="email" placeholder="אימייל" id="customer-email" required>
                       <span class="field-error" id="customer-email-error"></span>
                     </div>
                   </div>
@@ -441,38 +441,25 @@
                 <div class="checkout-accordion-body">
                   <div id="shipping-methods">טוען שיטות משלוח...</div>
                   <span class="field-error" id="shipping-method-error"></span>
-                  <div id="shipping-address-section" style="display:none">
+                  <div id="shipping-address-section">
                     <div class="checkout-form-fields">
-                      <input type="hidden" id="shipping-country" value="">
-                      <div class="input-wrapper input-full" id="state-wrapper" style="display:none">
-                        <label for="shipping-state" class="checkout-field-label" data-i18n="ecom_stateProvince">מדינה / מחוז *</label>
-                        <div class="checkout-select-wrapper">
-                          <select id="shipping-state" class="checkout-select"></select>
-                          <svg class="checkout-select-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                        </div>
-                        <span class="field-error" id="shipping-state-error"></span>
+                      <div class="input-wrapper">
+                        <label for="shipping-street" class="checkout-field-label">רחוב ומספר</label>
+                        <input type="text" placeholder="רחוב ומספר" id="shipping-street" required>
+                        <span class="field-error" id="shipping-street-error"></span>
                       </div>
-                      <div class="checkout-form-row">
-                        <div class="input-wrapper">
-                          <label for="shipping-city" class="checkout-field-label" data-i18n="ecom_city">עיר *</label>
-                          <input type="text" placeholder="עיר" id="shipping-city" required>
-                          <span class="field-error" id="shipping-city-error"></span>
-                        </div>
-                        <div class="input-wrapper">
-                          <label for="shipping-street" class="checkout-field-label" data-i18n="ecom_streetAndNumber">רחוב ומספר *</label>
-                          <input type="text" placeholder="רחוב ומספר" id="shipping-street" required>
-                          <span class="field-error" id="shipping-street-error"></span>
-                        </div>
+                      <div class="input-wrapper">
+                        <label for="shipping-apartment" class="checkout-field-label">דירה, קומה, כניסה</label>
+                        <input type="text" placeholder="דירה, קומה, כניסה" id="shipping-apartment">
                       </div>
-                      <div class="checkout-form-row">
-                        <div class="input-wrapper">
-                          <label for="shipping-apartment" class="checkout-field-label" data-i18n="ecom_apartmentExt">דירה, קומה, קוד בניין, הערות וכו'</label>
-                          <input type="text" placeholder="דירה, קומה, קוד בניין, הערות וכו'" id="shipping-apartment">
-                        </div>
-                        <div class="input-wrapper">
-                          <label for="shipping-zip" class="checkout-field-label" data-i18n="ecom_zipPostal">מיקוד</label>
-                          <input type="text" placeholder="מיקוד" id="shipping-zip">
-                        </div>
+                      <div class="input-wrapper">
+                        <label for="shipping-city" class="checkout-field-label">עיר</label>
+                        <input type="text" placeholder="עיר" id="shipping-city" required>
+                        <span class="field-error" id="shipping-city-error"></span>
+                      </div>
+                      <div class="input-wrapper">
+                        <label for="shipping-zip" class="checkout-field-label">מיקוד</label>
+                        <input type="text" placeholder="מיקוד" id="shipping-zip">
                       </div>
                       <div class="save-address-wrapper">
                         <label class="save-address-label">
@@ -675,6 +662,7 @@
     }
   })();
   </script>
+    <div data-integration="accessibility:toolbar"></div>
 
     <script src="/script.js"></script>
 
