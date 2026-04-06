@@ -1,93 +1,274 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com" />
+  </url>
+  <url>
+    <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com" />
   </url>
   <url>
     <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/about</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/about" />
+  </url>
+  <url>
+    <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/about</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/about" />
   </url>
   <url>
     <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/collections</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/collections" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/collections" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/collections" />
+  </url>
+  <url>
+    <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/collections</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/collections" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/collections" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/collections" />
   </url>
   <url>
     <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/contact</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/contact" />
+  </url>
+  <url>
+    <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/contact</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/contact" />
   </url>
   <url>
     <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/products</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/products" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/products" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/products" />
+  </url>
+  <url>
+    <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/products</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/products" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/products" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/products" />
   </url>
   <url>
     <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/cart</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/cart" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/cart" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/cart" />
+  </url>
+  <url>
+    <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/cart</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/cart" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/cart" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/cart" />
   </url>
   <url>
     <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/checkout</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/checkout" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/checkout" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/checkout" />
+  </url>
+  <url>
+    <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/checkout</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/checkout" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/checkout" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/checkout" />
   </url>
   <url>
     <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/login</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/login" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/login" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/login" />
+  </url>
+  <url>
+    <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/login</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/login" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/login" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/login" />
   </url>
   <url>
     <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/account</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/account" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/account" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/account" />
+  </url>
+  <url>
+    <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/account</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/account" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/account" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/account" />
   </url>
   <url>
     <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/order-success</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/order-success" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/order-success" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/order-success" />
+  </url>
+  <url>
+    <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/order-success</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/order-success" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/order-success" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/order-success" />
   </url>
   <url>
     <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/product/:slug</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/product/:slug" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/product/:slug" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/product/:slug" />
+  </url>
+  <url>
+    <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/product/:slug</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/product/:slug" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/product/:slug" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/product/:slug" />
   </url>
   <url>
     <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/category/:slug</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/category/:slug" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/category/:slug" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/category/:slug" />
+  </url>
+  <url>
+    <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/category/:slug</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/category/:slug" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/category/:slug" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/category/:slug" />
   </url>
   <url>
     <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/privacy</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/privacy" />
+  </url>
+  <url>
+    <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/privacy</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/privacy" />
   </url>
   <url>
     <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/terms</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/terms" />
+  </url>
+  <url>
+    <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/terms</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/terms" />
   </url>
   <url>
     <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/accessibility</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/accessibility" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/accessibility" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/accessibility" />
+  </url>
+  <url>
+    <loc>https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/accessibility</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/accessibility" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/en/accessibility" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/accessibility" />
   </url>
 </urlset>
