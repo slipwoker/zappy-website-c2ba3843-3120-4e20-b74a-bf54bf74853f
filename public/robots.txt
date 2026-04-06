@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/sitemap.xml
+Sitemap: https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/sitemap.xml

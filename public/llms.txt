@@ -5,65 +5,65 @@
 ## Pages
 
 ### בית
-https://a-ufbeahava-wait-let-me-redo-t.zappy5.app
+https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com
 גלו מבחר מצעים איכותיים ומגבות רכות שיהפכו את הבית שלכם למקלט של נוחות. סטים מושלמים לזוגות צעירים, תינוקות וכל המשפחה. איכות שמורגשת!
 
 ### אודות
-https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/about
+https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/about
 למה אלפי משפחות בוחרות בעטוף באהבה? כי אנחנו מאמינים שאיכות וחום ביתי מתחילים בטקסטיל נכון. הכירו את הערכים והמחויבות שלנו לנוחות שלכם.
 
 ### אוספים
-https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/collections
+https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/collections
 סטים מעוצבים במיוחד: מצעים איכותיים לזוגות צעירים, מגבות רכות לתינוקות, וסטי מתנה מושלמים. כל אוסף נבחר בקפידה למען הנוחות המקסימלית שלכם.
 
 ### צור קשר
-https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/contact
+https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/contact
 יש שאלות על המוצרים שלנו? רוצים ייעוץ אישי לבחירת סט מצעים או מגבות? צרו קשר עכשיו ונעזור לכם למצוא את הפתרון המושלם לבית שלכם!
 
 ### Products
-https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/products
+https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/products
 המוצרים שלנו - עטוף באהבה
 
 ### Cart
-https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/cart
+https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/cart
 עגלת הקניות שלך
 
 ### Checkout
-https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/checkout
+https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/checkout
 תשלום
 
 ### Login
-https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/login
+https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/login
 התחברות לקוחות
 
 ### Account
-https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/account
+https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/account
 החשבון שלי
 
 ### Order Success
-https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/order-success
+https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/order-success
 תודה על ההזמנה
 
 ### Product Detail
-https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/product/:slug
+https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/product/:slug
 פרטי המוצר - עטוף באהבה
 
 ### Category
-https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/category/:slug
+https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/category/:slug
 מוצרים - עטוף באהבה
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/privacy
+https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/terms
+https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/accessibility
+https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
@@ -75,5 +75,5 @@ Information about WCAG compliance and accessibility features.
 
 # Additional Resources
 
-- **Sitemap**: https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/sitemap.xml
-- **Robots.txt**: https://a-ufbeahava-wait-let-me-redo-t.zappy5.app/robots.txt
+- **Sitemap**: https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/sitemap.xml
+- **Robots.txt**: https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/robots.txt
