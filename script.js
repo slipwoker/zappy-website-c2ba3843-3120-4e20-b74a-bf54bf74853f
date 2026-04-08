@@ -500,6 +500,8 @@ window.onload = function() {
 ;
 
 ;
+
+;
 /* ==ZAPPY E-COMMERCE JS START== */
 // E-commerce functionality
 (function() {
@@ -5929,13 +5931,21 @@ function renderCategoryPage(container, category, t) {
     const categoryImage = category.image ? '<div class="category-banner" style="background-image: url(\'' + resolveProductImageUrl(category.image) + '\')"></div>' : '';
     var subcatHtml = '';
     if (category.subcategories && category.subcategories.length > 0) {
-      var allLabel = t.allProducts || (isRTL ? 'הכל' : 'All');
+      var allLabel = t.all || (isRTL ? 'הכל' : 'All');
       var catSlug = category.slug || category.id;
       subcatHtml = '<div class="subcategory-nav">';
-      subcatHtml += '<a href="/category/' + catSlug + '" class="subcategory-chip active">' + allLabel + '</a>';
+      var parentImg = category.image ? resolveProductImageUrl(category.image) : '';
+      subcatHtml += '<a href="/category/' + catSlug + '" class="subcategory-card active">' +
+        (parentImg ? '<div class="subcategory-card-bg" style="background-image: url(\''+parentImg+'\')"></div>' : '<div class="subcategory-card-bg subcategory-card-bg-empty"></div>') +
+        '<div class="subcategory-card-overlay"></div>' +
+        '<span class="subcategory-card-name">' + allLabel + '</span></a>';
       category.subcategories.forEach(function(sub) {
         var subSlug = sub.slug || sub.id;
-        subcatHtml += '<a href="/category/' + subSlug + '" class="subcategory-chip">' + sub.name + '</a>';
+        var subImg = sub.image ? resolveProductImageUrl(sub.image) : '';
+        subcatHtml += '<a href="/category/' + subSlug + '" class="subcategory-card">' +
+          (subImg ? '<div class="subcategory-card-bg" style="background-image: url(\''+subImg+'\')"></div>' : '<div class="subcategory-card-bg subcategory-card-bg-empty"></div>') +
+          '<div class="subcategory-card-overlay"></div>' +
+          '<span class="subcategory-card-name">' + sub.name + '</span></a>';
       });
       subcatHtml += '</div>';
     }
