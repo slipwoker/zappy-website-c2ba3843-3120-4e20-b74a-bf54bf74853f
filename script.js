@@ -502,6 +502,8 @@ window.onload = function() {
 ;
 
 ;
+
+;
 /* ==ZAPPY E-COMMERCE JS START== */
 // E-commerce functionality
 (function() {
@@ -5934,16 +5936,25 @@ function renderCategoryPage(container, category, t) {
       var allLabel = t.all || (isRTL ? 'הכל' : 'All');
       var catSlug = category.slug || category.id;
       subcatHtml = '<div class="subcategory-nav">';
+      // For the "All" card, use parent image; if parent has none, use first subcategory image that exists
       var parentImg = category.image ? resolveProductImageUrl(category.image) : '';
+      if (!parentImg) {
+        for (var fi = 0; fi < category.subcategories.length; fi++) {
+          if (category.subcategories[fi].image) { parentImg = resolveProductImageUrl(category.subcategories[fi].image); break; }
+        }
+      }
+      function subcatBg(imgUrl) {
+        return imgUrl ? '<div class="subcategory-card-bg" style="background-image: url(\''+imgUrl+'\')"></div>' : '<div class="subcategory-card-bg subcategory-card-bg-empty"></div>';
+      }
       subcatHtml += '<a href="/category/' + catSlug + '" class="subcategory-card active">' +
-        (parentImg ? '<div class="subcategory-card-bg" style="background-image: url(\''+parentImg+'\')"></div>' : '<div class="subcategory-card-bg subcategory-card-bg-empty"></div>') +
+        subcatBg(parentImg) +
         '<div class="subcategory-card-overlay"></div>' +
         '<span class="subcategory-card-name">' + allLabel + '</span></a>';
       category.subcategories.forEach(function(sub) {
         var subSlug = sub.slug || sub.id;
         var subImg = sub.image ? resolveProductImageUrl(sub.image) : '';
         subcatHtml += '<a href="/category/' + subSlug + '" class="subcategory-card">' +
-          (subImg ? '<div class="subcategory-card-bg" style="background-image: url(\''+subImg+'\')"></div>' : '<div class="subcategory-card-bg subcategory-card-bg-empty"></div>') +
+          subcatBg(subImg) +
           '<div class="subcategory-card-overlay"></div>' +
           '<span class="subcategory-card-name">' + sub.name + '</span></a>';
       });
