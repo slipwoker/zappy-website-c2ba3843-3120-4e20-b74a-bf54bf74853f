@@ -504,6 +504,8 @@ window.onload = function() {
 ;
 
 ;
+
+;
 /* ==ZAPPY E-COMMERCE JS START== */
 // E-commerce functionality
 (function() {
@@ -5928,6 +5930,21 @@ function renderCategoryPage(container, category, t) {
   const productGrid = document.getElementById('zappy-category-products');
   const isRTL = document.documentElement.dir === 'rtl' || document.body.dir === 'rtl';
   
+  // Build breadcrumb
+  var productsLabel = (typeof additionalJsProductsMenuLabel === 'string' && additionalJsProductsMenuLabel) ? additionalJsProductsMenuLabel : t.products;
+  var breadcrumbHtml = '<nav class="product-breadcrumb">';
+  breadcrumbHtml += '<a href="/">' + t.home + '</a>';
+  breadcrumbHtml += '<span class="breadcrumb-separator">›</span>';
+  breadcrumbHtml += '<a href="/products">' + productsLabel + '</a>';
+  if (category.parentCategory) {
+    breadcrumbHtml += '<span class="breadcrumb-separator">›</span>';
+    var parentUrl = '/category/' + (category.parentCategory.slug || category.parentCategory.id);
+    breadcrumbHtml += '<a href="' + parentUrl + '">' + category.parentCategory.name + '</a>';
+  }
+  breadcrumbHtml += '<span class="breadcrumb-separator">›</span>';
+  breadcrumbHtml += '<span class="breadcrumb-current">' + category.name + '</span>';
+  breadcrumbHtml += '</nav>';
+
   // Render category header
   if (headerContainer) {
     const categoryImage = category.image ? '<div class="category-banner" style="background-image: url(\'' + resolveProductImageUrl(category.image) + '\')"></div>' : '';
@@ -5936,13 +5953,7 @@ function renderCategoryPage(container, category, t) {
       var allLabel = t.all || (isRTL ? 'הכל' : 'All');
       var catSlug = category.slug || category.id;
       subcatHtml = '<div class="subcategory-nav">';
-      // For the "All" card, use parent image; if parent has none, use first subcategory image that exists
       var parentImg = category.image ? resolveProductImageUrl(category.image) : '';
-      if (!parentImg) {
-        for (var fi = 0; fi < category.subcategories.length; fi++) {
-          if (category.subcategories[fi].image) { parentImg = resolveProductImageUrl(category.subcategories[fi].image); break; }
-        }
-      }
       function subcatBg(imgUrl) {
         return imgUrl ? '<div class="subcategory-card-bg" style="background-image: url(\''+imgUrl+'\')"></div>' : '<div class="subcategory-card-bg subcategory-card-bg-empty"></div>';
       }
@@ -5960,7 +5971,7 @@ function renderCategoryPage(container, category, t) {
       });
       subcatHtml += '</div>';
     }
-    headerContainer.innerHTML = categoryImage + '<div class="category-info"><h1>' + category.name + '</h1>' + 
+    headerContainer.innerHTML = breadcrumbHtml + categoryImage + '<div class="category-info"><h1>' + category.name + '</h1>' + 
       (category.description ? '<p class="category-description">' + category.description + '</p>' : '') + 
       '</div>' + subcatHtml;
   }
