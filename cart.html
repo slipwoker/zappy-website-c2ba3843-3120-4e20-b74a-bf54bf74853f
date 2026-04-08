@@ -218,16 +218,7 @@
 })();
 </script>
 <!-- End Zappy Analytics -->
-    <title data-i18n="cart_page_title">עגלת קניות - עטוף באהבה</title>
-  
-  
-  
-  
-  
-  
-  
-  
-  <meta property="og:title" content="מצעים ומגבות איכותיים לבית חם ומפנק — עטוף באהבה">
+    <meta property="og:title" content="מצעים ומגבות איכותיים לבית חם ומפנק — עטוף באהבה">
   
   <meta property="og:type" content="website">
   <meta property="og:locale" content="he_IL">
@@ -251,8 +242,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
     <!-- Mickidum Accessibility Toolbar -->
     <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Iconify for cross-platform flag icons -->
     <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script><style id="zappy-multilang-css">
@@ -789,6 +778,8 @@ html[dir="rtl"] body {
 }
 
 </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/styles.css">
 
     <style id="zappy-dropdown-submenu-styles">
@@ -805,8 +796,8 @@ html[dir="rtl"] body {
       .sub-menu a:hover { background-color: #f5f5f5; }
       /* RTL (Hebrew/Arabic) dropdown positioning */
       [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
-      /* Hide empty dropdown menus */
-      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))), .sub-menu:not(:has(li)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+      /* Hide empty dropdown menus (exclude catalog sub-menus that use <a> children instead of <li>) */
+      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))):not(:has(> a)), .sub-menu:not(:has(li)):not(:has(> a)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
       /* Desktop: show submenu on Menu Group hover */
       li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
       /* Menu Group title styling */
@@ -815,7 +806,7 @@ html[dir="rtl"] body {
       /* ========== MOBILE SUBMENU STYLES ========== */
       @media (max-width: 768px) {
         .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
-        .sub-menu.mobile-expanded { max-height: 500px !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
+        .sub-menu.mobile-expanded { max-height: 60vh !important; overflow-y: auto !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
         [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
         /* Disable hover behavior on mobile */
         .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -875,18 +866,18 @@ html[dir="rtl"] body {
     // Preview pages are served by the Zappy server itself (localhost in dev), so use that base.
     // Deployed sites are static and must call the public Zappy API (never localhost).
     window.ZAPPY_API_BASE = (window.location.pathname.includes('/preview'))
-      ? "https://qaapi.zappy5.com"
+      ? "http://localhost:5001"
       : "https://qaapi.zappy5.com";
   </script>
   
     <div class="mobile-search-panel" id="mobile-search-panel">
       <div class="search-wrapper">
-        <input type="text" id="mobile-search-input" placeholder="חיפוש מוצרים..." autocomplete="off" data-i18n-placeholder="cart_placeholder_41">
-        <button class="search-submit" id="mobile-search-submit" title="חיפוש" data-i18n-title="cart_title_45">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+        <input type="text" id="mobile-search-input" placeholder="חיפוש מוצרים..." autocomplete="off">
+        <button class="search-submit" id="mobile-search-submit" title="חיפוש">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
         </button>
         <button class="close-search" id="close-mobile-search">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>
       <div class="search-results" id="mobile-search-results"></div>
@@ -910,25 +901,31 @@ html[dir="rtl"] body {
   <div class="nav-container">
     <div class="nav-brand">
       <a href="/" class="logo-link">
-        <img src="/assets/business-logo.webp" alt="עטוף באהבה" class="logo" data-i18n-alt="cart_alt_43">
+        <img src="/assets/business-logo.webp" alt="עטוף באהבה" class="logo" data-i18n-alt="home_alt_77">
       </a>
     </div>
     
     <ul class="nav-menu" id="navMenu">
 
     <li class="menu-item-has-children zappy-products-dropdown">
-      <a href="/products" data-i18n="cart_nav_35">
+      <a href="/products" data-i18n="home_nav_69">
         מוצרים
         <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M6 9l6 6 6-6"></path>
         </svg>
       </a>
       <ul class="sub-menu" id="zappy-nav-category-links">
-        <li><a href="/products" data-i18n="cart_nav_36">כל המוצרים</a></li>
+        <li><a href="/products" data-i18n="home_nav_70">כל המוצרים</a></li>
         <!-- Categories will be loaded dynamically -->
       </ul>
     </li>
-  <li><a href="/about" data-i18n="cart_nav_37">אודות</a></li><li><a href="/collections" data-i18n="cart_nav_38">אוספים</a></li><li><a href="/contact" data-i18n="cart_nav_39">צור קשר</a></li></ul>
+  <li><a href="/about" data-i18n="home_nav_71">אודות</a></li><li><a href="/collections" data-i18n="home_nav_72">אוספים</a></li><li><a href="/contact" data-i18n="home_nav_73">צור קשר</a></li></ul><div class="nav-ecommerce-icons nav-icons-left"><a href="/login" class="login-link nav-login" title="התחברות"><svg class="login-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a><a href="#cart" class="cart-link nav-cart" id="cart-drawer-toggle" title="עגלת קניות"><svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cart-count">0</span></a><div class="nav-search-box">
+    <input type="text" class="nav-search-input" id="nav-search-input" placeholder="חיפוש מוצרים..." autocomplete="off">
+    <button class="nav-search-btn" id="nav-search-btn" title="חיפוש">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <div class="nav-search-results" id="nav-search-results"></div>
+  </div></div><div class="nav-ecommerce-icons nav-icons-right"><button class="nav-search-toggle" id="mobile-search-toggle" title="חיפוש"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button></div>
 <div class="lang-switcher" data-no-icon-edit="true" data-icon-color="#F7F1FF" style="position:relative;display:inline-flex;align-items:center;z-index:1000;margin:0 4px;">
   <button class="lang-switcher-current" aria-haspopup="true" aria-expanded="false" data-no-icon-edit="true" style="display:flex;align-items:center;padding:8px;background:transparent;border:none;border-radius:6px;cursor:pointer;color:inherit;">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;" data-no-icon-edit="true"><path d="M12.039,.002s0,0,0,0c-.013,0-.026-.002-.039-.002-.005,0-.009,0-.014,0-.002,0-.003,0-.005,0C5.373,.011,0,5.39,0,12s5.383,12,12,12,12-5.383,12-12S18.638,.023,12.039,.002Zm9.747,6.998h-4.814c-1.067-2.669-2.712-4.781-3.731-5.925,3.734,.421,6.901,2.719,8.546,5.925Zm-4.786,5c0,1.407-.292,2.753-.731,4H7.731c-.439-1.247-.731-2.593-.731-4s.292-2.754,.73-4h8.539c.439,1.247,.731,2.593,.731,4Zm-1.122,5c-1.229,2.838-3.116,4.99-3.878,5.788-.762-.798-2.649-2.95-3.878-5.788h7.755ZM8.121,7c1.229-2.841,3.117-4.992,3.879-5.789,.762,.798,2.649,2.95,3.878,5.789h-7.757ZM10.757,1.075c-1.025,1.15-2.668,3.264-3.73,5.925H2.214C3.859,3.795,7.024,1.498,10.757,1.075ZM1.764,8H6.668c-.403,1.247-.668,2.589-.668,4s.265,2.752,.669,4H1.764c-.487-1.242-.764-2.588-.764-4s.277-2.758,.764-4Zm.45,9H7.029c1.067,2.669,2.712,4.781,3.731,5.925-3.734-.421-6.901-2.719-8.546-5.925Zm11.026,5.925c1.019-1.144,2.664-3.257,3.731-5.925h4.814c-1.645,3.206-4.812,5.504-8.546,5.925Zm8.996-6.925h-4.905c.404-1.248,.669-2.589,.669-4s-.265-2.752-.669-4h4.905c.487,1.242,.764,2.588,.764,4s-.277,2.758-.764,4Z"></path></svg>
@@ -937,20 +934,14 @@ html[dir="rtl"] body {
     <button class="lang-option" data-lang="en" style="display:flex;align-items:center;gap:8px;width:100%;padding:10px 14px;background:none;border:none;text-align:left;cursor:pointer;font-size:14px;color:#333;"><img src="https://api.iconify.design/circle-flags/us.svg" width="20" height="20" alt="" style="display:inline-block;vertical-align:middle;border-radius:50%;"> English</button>
   </div>
 </div>
-<script data-no-icon-edit="true">(function(){function f(){var b=document.querySelector('.lang-switcher-current');if(!b)return;var n=b.closest('nav')||b.closest('header')||b.closest('.navbar');if(!n)return;var a=n.querySelector('.nav-menu a,.nav-links a');if(!a)a=n.querySelector('a:not(.lang-option):not(.lang-switcher-current):not([class*="logo"])');if(a){var c=getComputedStyle(a).color;if(c&&c!=='rgb(0, 0, 0)'&&c!=='rgba(0, 0, 0, 0)'){b.style.color=c;return;}}var s=getComputedStyle(n).backgroundColor;if(s&&s!=='rgba(0, 0, 0, 0)'&&s!=='transparent'){var m=s.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);if(m){var l=(0.299*parseInt(m[1])+0.587*parseInt(m[2])+0.114*parseInt(m[3]))/255;b.style.color=l>0.5?'#1a1a1a':'#F3FAFF';}}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',f);}else{setTimeout(f,0);}})()</script><div class="nav-ecommerce-icons nav-icons-left"><a href="/login" class="login-link nav-login" title="התחברות" data-i18n-title="cart_title_46"><svg class="login-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a><a href="#cart" class="cart-link nav-cart" id="cart-drawer-toggle" title="עגלת קניות" data-i18n-title="cart_title_47"><svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span class="cart-count">0</span></a><div class="nav-search-box">
-    <input type="text" class="nav-search-input" id="nav-search-input" placeholder="חיפוש מוצרים..." autocomplete="off" data-i18n-placeholder="cart_placeholder_42">
-    <button class="nav-search-btn" id="nav-search-btn" title="חיפוש" data-i18n-title="cart_title_48">
-      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
-    </button>
-    <div class="nav-search-results" id="nav-search-results"></div>
-  </div></div><div class="nav-ecommerce-icons nav-icons-right"><button class="nav-search-toggle" id="mobile-search-toggle" title="חיפוש" data-i18n-title="cart_title_49"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg></button></div>
+<script data-no-icon-edit="true">(function(){function f(){var b=document.querySelector('.lang-switcher-current');if(!b)return;var n=b.closest('nav')||b.closest('header')||b.closest('.navbar');if(!n)return;var a=n.querySelector('.nav-menu a,.nav-links a');if(!a)a=n.querySelector('a:not(.lang-option):not(.lang-switcher-current):not([class*="logo"])');if(a){var c=getComputedStyle(a).color;if(c&&c!=='rgb(0, 0, 0)'&&c!=='rgba(0, 0, 0, 0)'){b.style.color=c;return;}}var s=getComputedStyle(n).backgroundColor;if(s&&s!=='rgba(0, 0, 0, 0)'&&s!=='transparent'){var m=s.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);if(m){var l=(0.299*parseInt(m[1])+0.587*parseInt(m[2])+0.114*parseInt(m[3]))/255;b.style.color=l>0.5?'#1a1a1a':'#F3FAFF';}}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',f);}else{setTimeout(f,0);}})()</script>
     
     
   </div>
 </nav>
 <nav class="zappy-catalog-menu rtl" id="zappy-catalog-menu">
       <div class="catalog-menu-container">
-        <a href="/products" class="catalog-menu-item catalog-menu-all" data-i18n="cart_nav_40">כל המוצרים</a>
+        <a href="/products" class="catalog-menu-item catalog-menu-all" data-i18n="home_nav_74">כל המוצרים</a>
         <div class="catalog-menu-categories" id="zappy-category-links">
           <!-- Categories will be loaded dynamically -->
         </div>
@@ -959,39 +950,39 @@ html[dir="rtl"] body {
   <main class="page-container ecommerce-page">
     
         <section class="cart-section">
-          <h1 data-i18n="cart_h1_1">עגלת הקניות שלך</h1>
+          <h1>עגלת הקניות שלך</h1>
           <div id="cart-items" class="cart-items">
-            <div class="empty-cart" data-i18n="cart_div_31">העגלה ריקה</div>
+            <div class="empty-cart">העגלה ריקה</div>
           </div>
           <div class="cart-summary">
-            <div class="cart-total" data-i18n="cart_div_32">סה"כ: <span id="cart-total">₪0</span></div>
-            <a href="/checkout" class="btn btn-primary checkout-btn" data-i18n="cart_link_12">המשך לתשלום</a>
+            <div class="cart-total">סה"כ: <span id="cart-total">₪0</span></div>
+            <a href="/checkout" class="btn btn-primary checkout-btn">המשך לתשלום</a>
           </div>
         </section>
       
   </main>
-  <footer class="site-footer"><div class="footer-container"><div class="footer-top"><div class="footer-column footer-about"><img src="/assets/business-logo.webp" alt="עטוף באהבה" class="logo" data-i18n-alt="cart_alt_44"><p class="footer-description" data-i18n="cart_p_6">מגוון רחב של טקסטיל איכותי לבית ולמשפחה. עוטפים אתכם באהבה ובנוחות.</p></div><div class="footer-column footer-links"><h3 class="footer-heading" data-i18n="cart_h3_3">קישורים מהירים</h3><ul class="footer-nav"><li data-i18n="cart_li_25"><a href="/about" data-i18n="cart_link_13">אודות</a></li><li data-i18n="cart_li_26"><a href="/collections" data-i18n="cart_link_14">אוספים</a></li><li data-i18n="cart_li_27"><a href="/contact" data-i18n="cart_link_15">צור קשר</a></li></ul></div><div class="footer-column footer-contact"><h3 class="footer-heading" data-i18n="cart_h3_4">יצירת קשר</h3><ul class="contact-list"><li data-i18n="cart_li_28"><i class="fas fa-envelope"></i><a href="mailto:[business_email]" data-i18n="cart_link_16">[business_email]</a></li><li data-i18n="cart_li_29"><i class="fas fa-phone"></i><a href="tel:[business_phone]" data-i18n="cart_link_17">[business_phone]</a></li><li data-i18n="cart_li_30"><a href="/" data-i18n="cart_link_18"><i class="fas fa-map-marker-alt"></i><span>[business_address]</span></a></li></ul></div><div class="footer-column footer-social"><h3 class="footer-heading" data-i18n="cart_h3_5">עקבו אחרינו</h3><div class="social-links"><a href="[facebook_handle]" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="[instagram_handle]" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="[whatsapp_handle]" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div></div><div class="footer-bottom"><div class="footer-bottom-content"><p class="copyright" data-i18n="cart_p_7">© 2026 עטוף באהבה. All rights reserved.</p><div class="footer-legal"><a href="/privacy" data-i18n="cart_link_19">Privacy Policy</a><span class="separator">|</span><a href="/terms" data-i18n="cart_link_20">Terms &amp; Conditions</a><span class="separator">|</span>
-            <a href="/return-policy" aria-label="מדיניות החזרות" data-i18n="cart_link_21">
+  <footer class="site-footer"><div class="footer-container"><div class="footer-top"><div class="footer-column footer-about"><img src="/assets/business-logo.webp" alt="עטוף באהבה" class="logo" data-i18n-alt="home_alt_83"><p class="footer-description" data-i18n="home_p_37">מגוון רחב של טקסטיל איכותי לבית ולמשפחה. עוטפים אתכם באהבה ובנוחות.</p></div><div class="footer-column footer-links"><h3 class="footer-heading" data-i18n="home_h3_15">קישורים מהירים</h3><ul class="footer-nav"><li data-i18n="home_li_61"><a href="/about" data-i18n="home_link_50">אודות</a></li><li data-i18n="home_li_62"><a href="/collections" data-i18n="home_link_51">אוספים</a></li><li data-i18n="home_li_63"><a href="/contact" data-i18n="home_link_52">צור קשר</a></li></ul></div><div class="footer-column footer-contact"><h3 class="footer-heading" data-i18n="home_h3_16">יצירת קשר</h3><ul class="contact-list"><li data-i18n="home_li_64"><i class="fas fa-envelope"></i><a href="mailto:[business_email]" data-i18n="home_link_53">[business_email]</a></li><li data-i18n="home_li_65"><i class="fas fa-phone"></i><a href="tel:[business_phone]" data-i18n="home_link_54">[business_phone]</a></li><li data-i18n="home_li_66"><a href="/" data-i18n="home_link_55"><i class="fas fa-map-marker-alt"></i><span>[business_address]</span></a></li></ul></div><div class="footer-column footer-social"><h3 class="footer-heading" data-i18n="home_h3_17">עקבו אחרינו</h3><div class="social-links"><a href="[facebook_handle]" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="[instagram_handle]" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="[whatsapp_handle]" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div></div><div class="footer-bottom"><div class="footer-bottom-content"><p class="copyright" data-i18n="home_p_38">© 2026 עטוף באהבה. All rights reserved.</p><div class="footer-legal"><a href="/privacy" data-i18n="home_link_56">Privacy Policy</a><span class="separator">|</span><a href="/terms" data-i18n="home_link_57">Terms &amp; Conditions</a><span class="separator">|</span>
+            <a href="/return-policy" aria-label="מדיניות החזרות" data-i18n="home_link_58">
               מדיניות החזרות
-            </a><span class="separator">|</span><a href="/accessibility" data-i18n="cart_link_22">Accessibility</a><span class="separator">|</span><a href="https://zappy5.com" target="_blank" class="zappy-attribution" data-i18n="cart_link_23">Generated by Zappy</a></div></div></div></div></footer>
+            </a><span class="separator">|</span><a href="/accessibility" data-i18n="home_link_59">Accessibility</a><span class="separator">|</span><a href="https://zappy5.com" target="_blank" class="zappy-attribution" data-i18n="home_link_60">Generated by Zappy</a></div></div></div></div></footer>
   
 <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
 <aside class="cart-drawer rtl" id="cart-drawer" dir="rtl">
   <div class="cart-drawer-header">
-    <h2 data-i18n="cart_h2_2">עגלת הקניות שלך</h2>
+    <h2>עגלת הקניות שלך</h2>
     <button type="button" class="cart-drawer-close" id="cart-drawer-close" aria-label="סגור">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
   </div>
   <div class="cart-drawer-body" id="cart-drawer-items">
-    <div class="empty-cart" data-i18n="cart_div_33">העגלה ריקה</div>
+    <div class="empty-cart">העגלה ריקה</div>
   </div>
   <div class="cart-drawer-footer">
-    <div class="cart-drawer-total" data-i18n="cart_div_34">
+    <div class="cart-drawer-total">
       <span>סה"כ:</span>
       <span id="cart-drawer-total">₪0</span>
     </div>
-    <a href="/checkout" class="cart-drawer-checkout" data-i18n="cart_link_24">המשך לתשלום</a>
+    <a href="/checkout" class="cart-drawer-checkout">המשך לתשלום</a>
   </div>
 </aside>
   <script>
