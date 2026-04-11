@@ -5,65 +5,65 @@
 ## Pages
 
 ### בית
-https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com
+https://www.atuf-be-ahava.co.il
 גלו מבחר מצעים איכותיים ומגבות רכות שיהפכו את הבית שלכם למקלט של נוחות. סטים מושלמים לזוגות צעירים, תינוקות וכל המשפחה. איכות שמורגשת!
 
 ### אודות
-https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/about
+https://www.atuf-be-ahava.co.il/about
 למה אלפי משפחות בוחרות בעטוף באהבה? כי אנחנו מאמינים שאיכות וחום ביתי מתחילים בטקסטיל נכון. הכירו את הערכים והמחויבות שלנו לנוחות שלכם.
 
 ### אוספים
-https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/collections
+https://www.atuf-be-ahava.co.il/collections
 סטים מעוצבים במיוחד: מצעים איכותיים לזוגות צעירים, מגבות רכות לתינוקות, וסטי מתנה מושלמים. כל אוסף נבחר בקפידה למען הנוחות המקסימלית שלכם.
 
 ### צור קשר
-https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/contact
+https://www.atuf-be-ahava.co.il/contact
 יש שאלות על המוצרים שלנו? רוצים ייעוץ אישי לבחירת סט מצעים או מגבות? צרו קשר עכשיו ונעזור לכם למצוא את הפתרון המושלם לבית שלכם!
 
 ### Products
-https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/products
+https://www.atuf-be-ahava.co.il/products
 המוצרים שלנו - עטוף באהבה
 
 ### Cart
-https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/cart
+https://www.atuf-be-ahava.co.il/cart
 עגלת הקניות שלך
 
 ### Checkout
-https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/checkout
+https://www.atuf-be-ahava.co.il/checkout
 תשלום
 
 ### Login
-https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/login
+https://www.atuf-be-ahava.co.il/login
 התחברות לקוחות
 
 ### Account
-https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/account
+https://www.atuf-be-ahava.co.il/account
 החשבון שלי
 
 ### Order Success
-https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/order-success
+https://www.atuf-be-ahava.co.il/order-success
 תודה על ההזמנה
 
 ### Product Detail
-https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/product/:slug
+https://www.atuf-be-ahava.co.il/product/:slug
 פרטי המוצר - עטוף באהבה
 
 ### Category
-https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/category/:slug
+https://www.atuf-be-ahava.co.il/category/:slug
 מוצרים - עטוף באהבה
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/privacy
+https://www.atuf-be-ahava.co.il/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/terms
+https://www.atuf-be-ahava.co.il/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/accessibility
+https://www.atuf-be-ahava.co.il/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
@@ -75,5 +75,5 @@ Information about WCAG compliance and accessibility features.
 
 # Additional Resources
 
-- **Sitemap**: https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/sitemap.xml
-- **Robots.txt**: https://zappy-site-c2ba3843-3120-4e20-b74a.onrender.com/robots.txt
+- **Sitemap**: https://www.atuf-be-ahava.co.il/sitemap.xml
+- **Robots.txt**: https://www.atuf-be-ahava.co.il/robots.txt
