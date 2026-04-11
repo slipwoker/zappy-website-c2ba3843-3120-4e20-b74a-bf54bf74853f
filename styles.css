@@ -9337,6 +9337,41 @@ main,
   display: none !important;
 }
 
+:root {
+  --bg-light: #E8F5E9;
+  --bg-dark: #1B5E20;
+  --surface: #F1FAF1;
+  --border-light: #C8E6C9;
+  --border-dark: #2E7D32;
+  --gradient-lightSection: linear-gradient(180deg, #E8F5E9 0%, #C8E6C9 60%, #E8F5E9 100%);
+}
+
+body {
+  background-color: #E8F5E9 !important;
+}
+
+.index-collections-section,
+.index-materials-section {
+  background-color: #FFFFFF !important;
+}
+
+.index-testimonials-section {
+  background-color: #1B5E20 !important;
+}
+
+.index-cta-section {
+  background-color: #E8F5E9 !important;
+}
+
+.site-footer {
+  background-color: #1B5E20 !important;
+}
+
+.featured-products-section,
+.featured-categories-section {
+  background-color: #E8F5E9 !important;
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
