@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.atuf-be-ahava.co.il</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il" />
@@ -12,7 +12,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/en</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il" />
@@ -21,7 +21,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/about</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/about" />
@@ -30,7 +30,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/en/about</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/about" />
@@ -39,7 +39,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/collections</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/collections" />
@@ -48,7 +48,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/en/collections</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/collections" />
@@ -57,7 +57,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/contact</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/contact" />
@@ -66,7 +66,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/en/contact</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/contact" />
@@ -75,7 +75,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/products</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/products" />
@@ -84,7 +84,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/en/products</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/products" />
@@ -93,7 +93,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/cart</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/cart" />
@@ -102,7 +102,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/en/cart</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/cart" />
@@ -111,7 +111,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/checkout</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/checkout" />
@@ -120,7 +120,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/en/checkout</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/checkout" />
@@ -129,7 +129,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/login</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/login" />
@@ -138,7 +138,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/en/login</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/login" />
@@ -147,7 +147,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/account</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/account" />
@@ -156,7 +156,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/en/account</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/account" />
@@ -165,7 +165,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/order-success</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/order-success" />
@@ -174,7 +174,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/en/order-success</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/order-success" />
@@ -183,7 +183,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/product/:slug</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/product/:slug" />
@@ -192,7 +192,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/en/product/:slug</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/product/:slug" />
@@ -201,7 +201,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/category/:slug</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/category/:slug" />
@@ -210,7 +210,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/en/category/:slug</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/category/:slug" />
@@ -219,7 +219,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/privacy</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/privacy" />
@@ -228,7 +228,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/en/privacy</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/privacy" />
@@ -237,7 +237,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/terms</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/terms" />
@@ -246,7 +246,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/en/terms</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/terms" />
@@ -255,7 +255,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/accessibility</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/accessibility" />
@@ -264,7 +264,7 @@
   </url>
   <url>
     <loc>https://www.atuf-be-ahava.co.il/en/accessibility</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.atuf-be-ahava.co.il/accessibility" />
